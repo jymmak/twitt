@@ -1,1 +1,1 @@
-![](assets/images/all.png)
+![](assets/imagenes/all.png)
