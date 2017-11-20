@@ -1,0 +1,40 @@
+var boton = document.getElementById("btn-submit");
+var tweet = document.getElementById("tweet");
+var areaDeTweets = document.getElementById("posts");
+var contador = document.getElementById("contador");
+
+
+
+boton.addEventListener("click", imprimirTexto);
+tweet.addEventListener("keyup", contarCaracter);
+
+function imprimirTexto(e) {
+	e.preventDefault();
+	
+	var parrafo = document.createElement("p");
+	parrafo.innerHTML = tweet.value;
+	
+	areaDeTweets.appendChild(parrafo);
+	
+	tweet.value = ("");
+}
+
+function contarCaracter() {
+	var limiteContador = 140;
+	var contar = tweet.value.length;
+	var resta = limiteContador - contar;
+	
+	contador.innerHTML = resta;
+	
+	if (contar.trim == 0) {
+		boton.disabled = true;
+	} else {
+		boton.disabled = false;	
+	}
+}
+
+
+
+
+
+
